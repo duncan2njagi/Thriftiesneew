@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Shoes</h1>
+<div class="row">
+    {% for shoe in shoes %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ shoe.image_url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ shoe.name }}</h5>
+                <p class="card-text">Price: Ksh {{ shoe.price }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Stock: {{ shoe.stock }}</li>
+                <li class="list-group-item">Color: {{ shoe.color }}</li>
+                <li class="list-group-item">Size: {{ shoe.shoe_size }}</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Buy Now</a>
+                <a href="#" class="card-link">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
